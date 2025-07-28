@@ -42,7 +42,7 @@ namespace AzubiFlow.View.UserControls
             taskInput.Clear();
         }
 
-        private void taskInput_TextChanged(object sender, TextChangedEventArgs e)
+        public void taskInput_TextChanged(object sender, TextChangedEventArgs e)
         {
             if (string.IsNullOrEmpty(taskInput.Text))
             {
