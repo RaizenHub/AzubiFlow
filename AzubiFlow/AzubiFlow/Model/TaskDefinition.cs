@@ -8,8 +8,8 @@ namespace AzubiFlow.Model
 {
     public class TaskDefinition
     {
-        public string Task { get; set; }
+        public string TaskName { get; set; }
         public double TaskTime { get; set; }
-        public DateOnly Date { get; set; }
+        public DateOnly TaskDate { get; set; }
     }
 }

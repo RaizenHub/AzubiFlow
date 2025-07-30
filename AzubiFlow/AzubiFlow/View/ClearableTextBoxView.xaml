@@ -1,11 +1,13 @@
-﻿<UserControl x:Class="AzubiFlow.View.UserControls.ClearableTextBox"
+﻿<UserControl x:Class="AzubiFlow.View.ClearableTextBoxView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:AzubiFlow.View.UserControls"
+             xmlns:local="clr-namespace:AzubiFlow.View"
              mc:Ignorable="d" 
              d:DesignHeight="20" d:DesignWidth="250">
+             <!--xmlns:ViewModel="clr-namespace:AzubiFlow.ViewModel"-->
+             <!--d:DataContext="{d:DesignInstance ViewModel:Clear}"-->
     <Grid Background="White">
         <TextBox x:Name="taskInput" VerticalAlignment="Center" FontSize="16" FontWeight="Light" Background="Transparent"
                  TextChanged="taskInput_TextChanged"/>

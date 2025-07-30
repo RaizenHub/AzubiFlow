@@ -13,24 +13,24 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace AzubiFlow.View.UserControls
+namespace AzubiFlow.View
 {
     /// <summary>
     /// Interaction logic for ClearableTextBox.xaml
     /// </summary>
-    public partial class ClearableTextBox : UserControl
+    public partial class ClearableTextBoxView : UserControl
     {
-        public ClearableTextBox()
+        public ClearableTextBoxView()
         {
             InitializeComponent();
         }
-        private string placeholder;
 
+        private string placeholder;
         public string Placeholder
         {
             get { return placeholder; }
-            set 
-            { 
+            set
+            {
                 placeholder = value;
                 //implent OnPropertyChanged 
                 txtPlaceholder.Text = placeholder;

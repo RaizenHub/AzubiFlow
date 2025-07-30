@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace AzubiFlow.ViewModel
 {
     //https://stackoverflow.com/questions/36149863/how-to-write-a-viewmodelbase-in-mvvm#:~:text=public%20abstract%20class,new%20PropertyChangedEventArgs(propertyName)
-    public abstract class ViewModelBase : INotifyPropertyChanged
+    public abstract class BaseViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 

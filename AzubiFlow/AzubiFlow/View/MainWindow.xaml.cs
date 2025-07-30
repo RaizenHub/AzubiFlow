@@ -1,4 +1,5 @@
-﻿using AzubiFlow.View.UserControls;
+﻿using AzubiFlow.View;
+using AzubiFlow.ViewModel;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -20,5 +21,7 @@ public partial class MainWindow : Window
     public MainWindow()
     {
         InitializeComponent();
+        MainWindowViewModel vm = new MainWindowViewModel();
+        DataContext = vm;
     }
 }

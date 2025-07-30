@@ -4,18 +4,19 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AzubiFlow"
-        xmlns:UserControls="clr-namespace:AzubiFlow.View.UserControls"
+        xmlns:View="clr-namespace:AzubiFlow.View"
+        xmlns:ViewModel="clr-namespace:AzubiFlow.ViewModel"
         mc:Ignorable="d"
-        Title="AzubiFlow" Height="600" Width="400" ResizeMode="NoResize">
+        d:DataContext="{d:DesignInstance ViewModel:MainWindowViewModel}"
+        Title="{Binding Title}" Height="600" Width="400" ResizeMode="NoResize">
     
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="250"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="400"/>
         </Grid.RowDefinitions>
 
@@ -23,12 +24,21 @@
             <TextBlock Text="Select Project Flow" Margin="5 5 0 0"/>
             <ComboBox Margin="5 0 5 0" Foreground="White"/>
             <TextBlock Text="Flow Task" Margin="5 5 0 0"/>
-            <UserControls:ClearableTextBox x:Name="TaskName" Width="250" HorizontalAlignment="Left" Margin="5 0 5 0" Placeholder="Enter Task Here"/>
+            <View:ClearableTextBoxView x:Name="TaskName" Width="240" HorizontalAlignment="Left" Margin="5 0 5 5" Placeholder="Enter Task Here"/>
+            <TextBlock Text="Required Time" Margin="5 0 0 0"/>
+            <View:ClearableTextBoxView x:Name="TaskTime" Width="240" HorizontalAlignment="Left" Margin="5 0 5 5" Placeholder="Enter Required Time Here"/>
+            <TextBlock Text="Date" Margin="5 0 0 0"/>
+            <View:ClearableTextBoxView x:Name="TaskDate" Width="240" HorizontalAlignment="Left" Margin="5 0 5 5" Placeholder="Enter Date Here"/>
         </StackPanel>
 
         <StackPanel Grid.Row="1" Grid.Column="0">
             <TextBlock Text="Task View" Margin="5 0 5 0"/>
-            <ListView x:Name="TaskView" Margin="5 0 5 0" Height="300"/>
+            <!--<ListView x:Name="TaskView" Margin="5 0 5 0" Height="300"/>-->
+            <DataGrid   Margin="5 0 5 0"
+                        ItemsSource="{Binding Tasks}"
+                        SelectedItem="{Binding SelectedTasks}">
+        
+            </DataGrid>
         </StackPanel>
 
     </Grid>
